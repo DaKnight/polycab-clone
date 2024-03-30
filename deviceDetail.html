@@ -4,162 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Device Detail</title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
-  <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 
-<style>
-.activeClass{
-  color: rgb(50, 154, 245);
-  border-bottom:2px solid rgb(50, 154, 245) ;
-  padding: 10px;
-  font-weight: 500;
-}
-
-.nonActive{
-  padding: 10px;
-  color:rgba(0, 0, 0, 0.65) ;
-
-}
-.hide{
-  display: none;
-}
-
-.showme{
-  display: block;
-}
-
-body{
-      font-size: 14px;
-    }
-
-    .layout-fixed .brand-link {
-      width: 200px;
-    }
-
-    .main-sidebar, .main-sidebar::before {
-        transition: margin-left .3s ease-in-out, width .3s ease-in-out;
-        width: 200px;
-    }
-
-    .sidebar-mini .main-sidebar .nav-link, .sidebar-mini-md .main-sidebar .nav-link, .sidebar-mini-xs .main-sidebar .nav-link {
-          width: calc(200px - .5rem* 2);
-          transition: width ease-in-out .3s;
-      }
-
-      [class*=sidebar-dark] .brand-link {
-          border-bottom: none;
-      }
-
-      @media (min-width: 768px){
-        body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper,
-         body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer,
-         body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header {
-            transition: margin-left .3s ease-in-out;
-            margin-left: 200px;
-        }
-      }
-      @media (min-width: 992px){
-        .sidebar-mini.sidebar-collapse .main-sidebar, .sidebar-mini.sidebar-collapse .main-sidebar::before {
-            margin-left: 0;
-            width: 70px;
-        }
-      }
-
-      [class*=sidebar-dark-] .nav-sidebar>.nav-item.menu-open>.nav-link, [class*=sidebar-dark-] .nav-sidebar>.nav-item:hover>.nav-link, [class*=sidebar-dark-] .nav-sidebar>.nav-item>.nav-link:focus {
-            background-color: rgba(255, 255, 255, 0);
-            color: #fff;
-        }
-
-        [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
-            background-color: #1890ff;
-            color: #343a40;
-        }
-
-        .sidebar{
-          padding: 0px 0px;
-        }
-
-        li .active {
-          background-color: #1890ff;
-        }
-        .active a p{
-          padding-left: 24px;
-          color: #fff;
-        }
-
-        .dropdown-menu-lg {
-            min-width: 160px;
-            font-weight: 500 !important;
-        }
-
-        [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:hover {
-          background-color: rgba(255,255,255,0);
-        }
-
-        .sidebarNew {
-          width: 30px ;
-          position: absolute;
-          top: 23rem;
-          right: -2px;
-          font-size: 20px;
-        }
-
-        .sidebarNew a{
-          width: 14px !important;
-        }
-
-        .sideclock{
-          position: absolute;
-          left: 30%;
-          bottom: 0;
-          color: #fff;
-        }
-
-        .navbar-nav .nav-item:hover {
-          background: rgba(0, 0, 0, .025);
-        }
-
-        .navbar-nav .nav-item {
-          font-size: 16px;
-        }
-</style>
+ 
 
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
   
   <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="border-bottom: none; box-shadow: 0 1px 4px rgba(0,21,41,.08);">
- 
+    <!-- Left navbar links -->
     <ul class="navbar-nav">
-    <p id="back" style="font-size: 20px; margin-bottom: -8px;"><i class='far fa-arrow-alt-circle-left' style="color: blue;"></i>  Back</p>
+      <!-- <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li> -->
     </ul>
- 
+
+    <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       
       <li class="nav-item py-1">
@@ -179,7 +45,7 @@ body{
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-        
+            <!-- <i class="fas fa-users mr-2"></i> -->
             <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
           </a>
       </li>
@@ -190,35 +56,35 @@ body{
       </li>
     </ul>
   </nav>
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="overflow: hidden;">
  
-  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="overflow-x: hidden;">
- 
-    <a href="index3.html" class="brand-link p-0 d-flex" style="background-color: #002140;">
+    <a href="Dashboard.html" class="brand-link p-0 d-flex" style="background-color: #002140;">
       <img src="dist/img/logoPolycab.png" alt="Polycab Logo" class="mx-auto" style=" width: 45%; height: 64px;">
-     
+      
     </a>
+
  
     <div class="sidebar" style="background-color: #001529;">
- 
+
+     
       <nav class="mt-2">
-        
+      
         <div class="sidebarNew">
-          <a class="nav-link" href="#" role="button"><i class="fa-solid fa-backward-step" style="color: #1890ff;"></i></a>
+          <a class="nav-link" href="#" role="button" ><i class="fa-solid fa-backward-step" style="color: #1890ff;"></i></a>
         </div>
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-       
+         
           <li class="nav-item menu-open">
             <a href="#" class="nav-link">
               <i class="nav-icon fa-solid fa-sitemap" style="font-size: 14px;"></i>
-              
-              <p>
+                        <p>
                 Plant
                 <i class="right fas fa-angle-left" style="font-size: 10px; top: 0.9rem;"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item active">
-                <a href="./index.html" class="nav-link">
+                <a href="./Dashboard.html" class="nav-link">
                   <p>Plant list</p>
                 </a>
               </li>
@@ -274,16 +140,16 @@ body{
           </li>
         </ul>
       </nav>
-      <div class="sideclock mb-3 " style="margin-left: -8px;">
-        <p class="currenTime mb-1 text-center" style="font-size: 17px;"></p>
-        <p class="currentDate mb-1 text-center" style="font-size: 19px;"></p>
-        <p class="mx-auto text-center"style="font-size: 15px;">V1.5.0</p>
+      <div class="sideclock mb-3">
+        <p class="currenTime mb-1  text-center" style="font-size: 17px;"></p>
+        <p class="currentDate mb-1  text-center" style="font-size: 19px;"></p>
+        <p class="mx-auto  text-center" style="font-size: 15px;">V1.5.0</p>
       </div>
- 
-    </div>
-   
-  </aside>
 
+    </div>
+  
+  </aside>
+   
   
   <div class="content-wrapper">
     <div class="col-12" style="display: flex; flex-direction: column;padding: 10px;padding-bottom: 0%; background-color: white; width: 100%;font-size: 17px;">
