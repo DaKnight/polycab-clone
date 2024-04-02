@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <style>
+    table.dataTable>thead>tr>th:not(.sorting_disabled), table.dataTable>thead>tr>td:not(.sorting_disabled) {
+      padding-right: initial;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -248,9 +257,14 @@
         <!-- Main row -->
         <div class="row">
           <section class="col-12">
+            
             <div class="card">
-              <div class="card-body px-4">
-                <table class="table d-block d-xl-table" style="overflow-x: auto;">
+              <!-- <div class="card-header">
+                <h3 class="card-title">DataTable with default features</h3>
+              </div> -->
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table d-block d-xl-table" style="overflow-x: auto;">
                   <thead style="background: #fafafa;">
                     <tr>
                       <th style="font-weight: 600;">Status</th>
@@ -267,16 +281,16 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="py-1"><img src="./images/online.png" alt="online" style="height: 35px; width: 35px;"></td>
+                      <td class="py-1"><img src="./images/online.png" alt="online" style="height: 35px; width: 35px; border-top: none;"></td>
                       <td class="d-flex align-items-center" style="border-top: none;"><a href="./index.html">Uchch Madhyamik Vidhyalay Kararwana</a></td>
-                      <td style="color: rgba(0, 0, 0, .65);">8.00 kWh</td>
-                      <td style="color: rgba(0, 0, 0, .65);">844.00 kWh</td>
-                      <td style="color: rgba(0, 0, 0, .65);">2024-02-27	</td>
-                      <td style="color: rgba(0, 0, 0, .65);">2024-03-30 12:29:00</td>
-                      <td style="color: rgba(0, 0, 0, .65);">Grid</td>
-                      <td style="color: rgba(0, 0, 0, .65);">2.69kW</td>
-                      <td style="color: rgba(0, 0, 0, .65);">1.6</td>
-                      <td><a href="#" role="button">Edit</a>&nbsp; <a href="#" role="button">Delete</a></td>
+                      <td style="color: rgba(0, 0, 0, .65);border-top: none;">8.00 kWh</td>
+                      <td style="color: rgba(0, 0, 0, .65);border-top: none;">844.00 kWh</td>
+                      <td style="color: rgba(0, 0, 0, .65);border-top: none;">2024-02-27	</td>
+                      <td style="color: rgba(0, 0, 0, .65);border-top: none;">2024-03-30 12:29:00</td>
+                      <td style="color: rgba(0, 0, 0, .65);border-top: none;">Grid</td>
+                      <td style="color: rgba(0, 0, 0, .65);border-top: none;">2.69kW</td>
+                      <td style="color: rgba(0, 0, 0, .65);border-top: none;">1.6</td>
+                      <td style="border-top: none;"><a href="#" role="button">Edit</a>&nbsp; <a href="#" role="button">Delete</a></td>
                     </tr>
                     <tr>
                       <td class="py-1"><img src="./images/reallyCloudy.png" alt="online" style="height: 35px; width: 35px;"></td>
@@ -387,9 +401,25 @@
                       <td><a href="#" role="button">Edit</a>&nbsp; <a href="#" role="button">Delete</a></td>
                     </tr>
                   </tbody>
+                  <!-- <tfoot>
+                    <tr>
+                      <th style="font-weight: 600;">Status</th>
+                      <th style="font-weight: 600;">PlantName</th>
+                      <th style="font-weight: 600;">E-Today</th>
+                      <th style="font-weight: 600;">E-Total</th>
+                      <th style="font-weight: 600;">Start Time</th>
+                      <th style="font-weight: 600;">Update</th>
+                      <th style="font-weight: 600;">PlantType</th>
+                      <th style="font-weight: 600;">Power</th>
+                      <th style="font-weight: 600;">Efficiency</th>
+                      <th style="font-weight: 600;">Operation</th>
+                    </tr>
+                  </tfoot> -->
                 </table>
               </div>
+              <!-- /.card-body -->
             </div>
+            <!-- /.card -->
           </section>
         </div>
         <!-- /.row (main row) -->
@@ -413,7 +443,39 @@
 </script> 
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../../plugins/jszip/jszip.min.js"></script>
+<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
 <script src="dist/js/adminlte.js"></script>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
  
 </body>
 </html>
